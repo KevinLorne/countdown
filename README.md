@@ -57,10 +57,14 @@ This project is a starting point for a Flutter application. Follow the instructi
     - No login is required to access the application. All features are available to users without authentication.
 
 8. **Known Bugs:**:
-    - Timer Inconsistency: On older devices or under heavy load, the timer may experience slight delays.
-    - Words Issues: Not verifying or adding word to a list. When some of the letter are not present in the game a word can be scored.
-    - UI Scaling Issues: On very small screens (less than 4 inches), some UI elements may overlap or not display correctly.
-    - API Connectivity: If the dictionary API is unreachable due to network issues, word validation will fail, and the game will display an error message.
+9. **Timer Not Starting Issue**: The timer may not start immediately after adding all letters. Ensure that letters are added correctly, and double-check that the timer starts when the letter count reaches the total required letters.
+
+10. **Score Not Updating**: In some cases, the score may not update correctly after submitting a word. This might be due to the word not being validated correctly by the dictionary API.
+
+11. .**UI Overlap on Small Screens**: On smaller screen devices, some UI elements may overlap, making it difficult to interact with them. This can be fixed by adjusting the UI layout to be more responsive.
+
+12. **Dictionary API Limitations**: The dictionary API used for word validation may have rate limits or availability issues, leading to some valid words not being accepted or errors in word validation.
+
 
 9. **Special Requirements:**:
     - Network Access: The application requires internet access for word validation using the dictionary API. Ensure your device is connected to a reliable network. 

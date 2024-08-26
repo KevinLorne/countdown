@@ -26,7 +26,7 @@ class _GameScreenState extends State<GameScreen> {
   String word = '';
   int score = 0;
   int _timeLeft = 90;
-  Timer? _timer; 
+  Timer? _timer;
   final Random _random = Random();
   bool _canType = true;
   int _highestScore = 0;
