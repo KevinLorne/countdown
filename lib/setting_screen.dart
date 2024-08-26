@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatefulWidget {
-  const SettingsScreen({super.key});
+  final Function(String, int, int) onSettingsChanged;
+
+  const SettingsScreen({super.key, required this.onSettingsChanged});
 
   @override
   _SettingsScreenState createState() => _SettingsScreenState();
@@ -46,7 +48,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 onChanged: (double value) {
                   setState(() {
                     _consonants = value.toInt();
-                    _vowels = 9 - _consonants;
+                    _vowels = 10 - _consonants;
                   });
                 },
               ),
@@ -55,6 +57,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           Text('Vowels: $_vowels'),
           ElevatedButton(
             onPressed: () {
+              widget.onSettingsChanged(_difficulty, _consonants, _vowels);
               Navigator.pop(context);
             },
             child: const Text('Save'),
