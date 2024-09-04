@@ -11,6 +11,14 @@ class MainMenu extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const SizedBox(
+              width: 100,
+              height: 100,
+              child: Icon(
+                Icons.alarm_outlined,
+                size: 100,
+              ),
+            ),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/game');

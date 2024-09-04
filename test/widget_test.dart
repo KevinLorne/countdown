@@ -1,20 +1,15 @@
-
-import 'package:flutter/material.dart';
+import 'package:countdown/main.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:countdown/main.dart';
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget( const CountdownGame());
+  testWidgets('App initialization and MainMenu display',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(const CountdownGame());
 
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Countdown Game'), findsOneWidget);
+    expect(find.text('Start Game'), findsOneWidget);
+    expect(find.text('Settings'), findsOneWidget);
+    expect(find.text('Instructions'), findsOneWidget);
+    expect(find.text('View Scores'), findsOneWidget);
   });
 }

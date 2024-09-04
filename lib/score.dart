@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class HighScoresScreen extends StatefulWidget {
-
   final List<Map<String, dynamic>> scores;
 
   const HighScoresScreen({super.key, required this.scores});
@@ -23,8 +22,11 @@ class _HighScoresScreenState extends State<HighScoresScreen> {
       body: ListView.builder(
         itemCount: sortedScores.length,
         itemBuilder: (context, index) {
+          // Ensure 'word' is being accessed correctly here
+          final word = sortedScores[index]['word'] ??
+              'Unknown'; // Default value to 'Unknown'
           return ListTile(
-            title: Text('Word: ${sortedScores[index]['word']} (${sortedScores[index]['score']} points)'),
+            title: Text('Word: $word (${sortedScores[index]['score']} points)'),
             subtitle: Text('Player: ${sortedScores[index]['player']}'),
           );
         },
